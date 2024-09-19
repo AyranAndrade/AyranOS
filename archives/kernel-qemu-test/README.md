@@ -77,8 +77,8 @@ Exits with a return code of 0 using the exit syscall.
 To make the assembly code into an ELF kernel, you need to assemble and link it correctly. Here are the commands:
 
 ```
-as --64 -o kernel.o entry.S
-ld -o main.exe -T kernel.ld kernel.o
+as --64 -o main.o entry.S
+ld -o main.exe -T kernel.ld main.o
 ```
 
 as --64: Assembles the code for 64-bit architecture.
@@ -89,7 +89,22 @@ ld: Links the object file using the kernel.ld linker script to create the main.e
 Now that you have your ELF kernel (main.exe), you can run it using QEMU:
 
 ```
-qemu-system-x86_64 -kernel main.exe -nographic
+qemu-system-x86_64 -kernel main.exe -nographic -machine type=pc-i440fx-3.1
 ```
 
+**Observation:**
+
+There is a problem with original command. The error was
+```
+Error loading uncompressed kernel without PVH ELF Note
+```
+
+Based on this [source](https://stackoverflow.com/a/72248756).
+
 The -nographic option runs QEMU without a graphical window, using your terminal for input/output.
+
+### Verify content from ELF file
+
+```
+readelf -a main.exe
+```
