@@ -6,6 +6,26 @@ The name could be iOS (Inefficient Operating System).
 In this version, the OS doesn't have either kernel
 interruptions, virtual memory or file system.
 
+## Makefile
+
+### To clean
+
+```
+make clean
+```
+
+### To build
+
+```
+make build
+```
+
+### To run
+
+```
+make run
+```
+
 ## QEMU
 
 ### How to compile
