@@ -31,6 +31,12 @@ In **nographic** mode, QEMU has a special key combination to access the QEMU mon
 Press **Ctrl+A** (hold **Ctrl** and press **A**).  
 Then, release **Ctrl** and press **X**.
 
+### To disassemble the executable
+
+```
+objdump -d kernel.bin
+```
+
 ## Read
 
 [Explanation about linker](archives/kernel-qemu-c-language/README.md)
