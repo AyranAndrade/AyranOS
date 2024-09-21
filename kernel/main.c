@@ -1,4 +1,5 @@
-int getLength(char* value);
+#include "string.h"
+
 void print(char* value);
 void clearScreen();
 
@@ -8,19 +9,6 @@ void main() {
     print(value);
 
     while(1) {}
-}
-
-int getLength(char* value) {
-    int count = 0;
-
-    char currentValue = value[0];
-
-    while (currentValue != '\0') {
-        count++;
-        currentValue = value[count];
-    }
-
-    return count;
 }
 
 void print(char* value) {
