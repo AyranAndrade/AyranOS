@@ -13,3 +13,5 @@ start:
 	cli	;block interrupts
 	call main
 	hlt	;halt the CPU
+
+section .note.GNU-stack noalloc noexec nowrite progbits
