@@ -4,7 +4,7 @@ clean :
 	find . -type f -name '*.exe' -delete
 
 build : *.c
-	gcc -c *.c -o kernel.o -ffreestanding -nostdlib
+	gcc -c main.c -o kernel.o -ffreestanding -nostdlib
 	ld -T kernel.ld -o kernel.bin kernel.o
 
 run : build
