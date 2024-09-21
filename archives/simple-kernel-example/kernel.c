@@ -11,8 +11,7 @@ void kmain() {
 void k_clear_screen() {
 	char *vidmem = (char *) 0xb8000;
 	unsigned int i=0;
-	while(i < (80*25*2))
-	{
+	while(i < (80*25*2)) {
 		vidmem[i]=' ';
 		i++;
 		vidmem[i]=WHITE_TXT;
@@ -26,10 +25,8 @@ unsigned int k_printf(char *message, unsigned int line) {
 
 	i=(line*80*2);
 
-	while(*message!=0)
-	{
-		if(*message=='\n') // check for a new line
-		{
+	while(*message!=0) {
+		if(*message=='\n') { // check for a new line
 			line++;
 			i=(line*80*2);
 			*message++;
