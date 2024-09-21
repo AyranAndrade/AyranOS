@@ -64,3 +64,5 @@ objdump -d kernel.bin
 [Explanation about ELF files](archives/kernel-qemu-test/README.md)
 
 [Explanation about how to compile assembly](archives/hello-world-assembly/README.md)
+
+[Explanation about the assembly used in the kernel](kernel/asm.md)
