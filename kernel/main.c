@@ -1,14 +1,31 @@
-void main(void) {
-    char *video_memory = (char *)0xb8000;
-    video_memory[0] = 'A';
-    video_memory[1] = 0x07;
-    video_memory[2] = 'Y';
-    video_memory[3] = 0x07;
-    video_memory[4] = 'R';
-    video_memory[5] = 0x07;
-    video_memory[6] = 'A';
-    video_memory[7] = 0x07;
-    video_memory[8] = 'N';
+int getLength(char* value);
+void print(char* value);
 
-    while(1) {}  
+void main() {
+    char value[] = "Ayran, hello world from kernel!";
+    print(value);
+
+    while(1) {}
+}
+
+int getLength(char* value) {
+    int count = 0;
+
+    char currentValue = value[0];
+
+    while (currentValue != '\0') {
+        count++;
+        currentValue = value[count];
+    }
+
+    return count;
+}
+
+void print(char* value) {
+    char* videoMemory = (char *)0xb8000;
+
+    for (int i = 0; i < getLength(value); i++) {
+        videoMemory[i * 2] = value[i];
+        videoMemory[i * 2 + 1] = 0x07; 
+    }
 }
