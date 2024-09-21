@@ -1,3 +1,6 @@
+#ifndef COLOUR_H
+#define COLOUR_H
+
 #define BLACK 0x0
 #define BLUE 0x1
 #define GREEN 0x2
@@ -16,3 +19,5 @@
 #define BRIGHT_WHITE 0xF
 
 #define LIGHT_GRAY_ON_BLACK 0x07
+
+#endif
