@@ -8,4 +8,4 @@ build : *.c
 	ld -T kernel.ld -o kernel.bin kernel.o
 
 run : build
-	qemu-system-x86_64 -kernel kernel.bin -nographic -machine type=pc-i440fx-3.1
+	qemu-system-x86_64 -kernel kernel.bin -machine type=pc-i440fx-3.1
