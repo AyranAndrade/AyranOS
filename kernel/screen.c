@@ -4,7 +4,13 @@
 #include "colour.h"
 
 void print(char* value) {
-    for (int i = 0; i < getLength(value); i++) {
+    int length = getLength(value);
+
+    if (length > NUMBER_OF_CHARACTERS) {
+        length = NUMBER_OF_CHARACTERS;
+    }
+
+    for (int i = 0; i < length; i++) {
         VIDEO_MEMORY[i * 2] = value[i];
         VIDEO_MEMORY[i * 2 + 1] = LIGHT_GRAY_ON_BLACK; 
     }
