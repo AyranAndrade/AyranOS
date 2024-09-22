@@ -66,3 +66,5 @@ objdump -d kernel.bin
 [Explanation about how to compile assembly](archives/hello-world-assembly/README.md)
 
 [Explanation about the assembly used in the kernel](kernel/asm.md)
+
+[Tutorial about writing a kernel](https://isu-rathnayaka.medium.com/develop-your-own-x86-operating-system-os-2-9b0d41e60499)
